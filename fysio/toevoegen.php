@@ -5,9 +5,9 @@ require_once 'header.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
         $stmt = $db->prepare("INSERT INTO fysio (patientnummer, naam, geboortedatum, straat, huisnummer, 
-            postcode, plaats, verzekeringsnummer, klachten) 
+            postcode, plaats, email, verzekeringsnummer, klachten) 
             VALUES (:patientnummer, :naam, :geboortedatum, :straat, :huisnummer, 
-            :postcode, :plaats, :verzekeringsnummer, :klachten)");
+            :postcode, :plaats, :email, :verzekeringsnummer, :klachten)");
 
         $stmt->execute([
             ':patientnummer' => htmlspecialchars($_POST['patientnummer']),
@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ':huisnummer' => htmlspecialchars($_POST['huisnummer']),
             ':postcode' => htmlspecialchars($_POST['postcode']),
             ':plaats' => htmlspecialchars($_POST['plaats']),
+            ':email' => htmlspecialchars($_POST['email']),
             ':verzekeringsnummer' => htmlspecialchars($_POST['verzekeringsnummer']),
             ':klachten' => htmlspecialchars($_POST['klachten'])
         ]);
@@ -79,6 +80,11 @@ $next_nr = ($result['last_nr'] ?? 0) + 1;
                     <label for="plaats" class="form-label">Plaats</label>
                     <input type="text" class="form-control" id="plaats" name="plaats" required>
                 </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mailadres</label>
+                <input type="email" class="form-control" id="email" name="email">
             </div>
 
             <div class="mb-3">

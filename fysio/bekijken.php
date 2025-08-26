@@ -72,6 +72,12 @@ try {
                     <th>Woonplaats:</th>
                     <td><?= htmlspecialchars($patient['plaats']) ?></td>
                 </tr>
+                <?php if (!empty($patient['email'])): ?>
+                <tr>
+                    <th>E-mail:</th>
+                    <td><a href="mailto:<?= htmlspecialchars($patient['email']) ?>"><?= htmlspecialchars($patient['email']) ?></a></td>
+                </tr>
+                <?php endif; ?>
             </table>
         </div>
     </div>

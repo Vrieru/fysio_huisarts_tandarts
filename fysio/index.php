@@ -20,6 +20,7 @@ $patienten = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th>Naam</th>
                     <th>Geboortedatum</th>
                     <th>Adres</th>
+                    <th>E-mail</th>
                     <th>Acties</th>
                 </tr>
                 </thead>
@@ -32,6 +33,11 @@ $patienten = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td>
                             <?= htmlspecialchars($patient['straat'] . ' ' . $patient['huisnummer']) ?><br>
                             <?= htmlspecialchars($patient['postcode'] . ' ' . $patient['plaats']) ?>
+                        </td>
+                        <td>
+                            <?php if (!empty($patient['email'])): ?>
+                                <a href="mailto:<?= htmlspecialchars($patient['email']) ?>"><?= htmlspecialchars($patient['email']) ?></a>
+                            <?php endif; ?>
                         </td>
                         <td>
                             <a href="bekijken.php?id=<?= $patient['id'] ?>" class="btn btn-sm btn-info">Bekijken</a>

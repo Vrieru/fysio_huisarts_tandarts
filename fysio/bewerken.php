@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             huisnummer = :huisnummer,
             postcode = :postcode,
             plaats = :plaats,
+            email = :email,
             verzekeringsnummer = :verzekeringsnummer,
             klachten = :klachten
             WHERE id = :id");
@@ -30,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ':huisnummer' => htmlspecialchars($_POST['huisnummer']),
             ':postcode' => htmlspecialchars($_POST['postcode']),
             ':plaats' => htmlspecialchars($_POST['plaats']),
+            ':email' => htmlspecialchars($_POST['email']),
             ':verzekeringsnummer' => htmlspecialchars($_POST['verzekeringsnummer']),
             ':klachten' => htmlspecialchars($_POST['klachten'])
         ]);
@@ -102,6 +104,12 @@ if (!$patient) {
                 <input type="text" class="form-control" id="plaats" name="plaats"
                        value="<?= htmlspecialchars($patient['plaats']) ?>" required>
             </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mailadres</label>
+            <input type="email" class="form-control" id="email" name="email"
+                   value="<?= htmlspecialchars($patient['email'] ?? '') ?>">
         </div>
 
         <div class="mb-3">
