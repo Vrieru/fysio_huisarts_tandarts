@@ -55,7 +55,7 @@ try {
                 </tr>
                 <tr>
                     <th>Geboortedatum:</th>
-                    <td><?= htmlspecialchars($tandarts['geboortedatum']) ?></td>
+                    <td><?= date_format(date_create(htmlspecialchars($tandarts['geboortedatum'])), 'd/m/Y') ?></td>
                 </tr>
                 <tr>
                     <th>Verzekeringsnummer:</th>

@@ -3,6 +3,8 @@ require_once 'config.php';
 
 $stmt = $db->query("SELECT * FROM tandarts ORDER BY achternaam, voornaam");
 $tandartsen = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+function date_dutch($stringDate){ return date_format(date_create($stringDate), 'd/m/Y' ); }
 ?>
 
 <!DOCTYPE html>
@@ -34,10 +36,10 @@ $tandartsen = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($tandartsen as $tandarts): ?>
             <tr>
                 <td><?= htmlspecialchars($tandarts['voornaam'] . ' ' . $tandarts['achternaam']) ?></td>
-                <td><?= htmlspecialchars($tandarts['geboortedatum']) ?></td>
+                <td><?= date_format(date_create(htmlspecialchars($tandarts['geboortedatum'])), 'd/m/Y' ) ?></td>
                 <td><?= htmlspecialchars($tandarts['adres'] . ', ' . $tandarts['postcode']) ?></td>
                 <td><?= htmlspecialchars($tandarts['woonplaats']) ?></td>
-                <td><?= date_format(date_create(htmlspecialchars($tandarts['laatste_behandeling'])), 'Y/m/d' ) ?></td>
+                <td><?= date_format(date_create(htmlspecialchars($tandarts['laatste_behandeling'])), 'd/m/Y' ) ?></td>
                 <td>
                     <a href="bekijken.php?id=<?= $tandarts['id'] ?>" class="btn btn-sm btn-info">Bekijken</a>
                     <a href="bewerken.php?id=<?= $tandarts['id'] ?>" class="btn btn-primary btn-sm">Bewerken</a>
