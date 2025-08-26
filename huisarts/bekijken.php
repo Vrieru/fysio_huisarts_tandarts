@@ -43,8 +43,8 @@ try {
                             <td><?= htmlspecialchars($huisarts['voornaam'] . ' ' . $huisarts['achternaam']) ?></td>
                         </tr>
                         <tr>
-                            <th>Geboortedatum:</th>
-                            <td><?= htmlspecialchars($huisarts['geboortedatum']) ?></td>
+                             <th>Geboortedatum:</th>
+                            <td><?= date('d-m-Y', strtotime($huisarts['geboortedatum'])) ?></td>
                         </tr>
                         <tr>
                             <th>Verzekeringsnr:</th>
