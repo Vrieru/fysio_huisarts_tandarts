@@ -1,3 +1,2 @@
 TODO
-- De fysio wil van al zijn klanten een e-mailadres kunnen aanklikken, zodat hij eenvoudig een mail kan sturen. (mailto:)
-- De fysio wil dat de button "nieuwe Patient" groen wordt, zodat het duidelijker is waar hij op moet klikken. (:hover)
+- De zorgverzekeraar wil een overzicht van alle patienten, waarin ze kunnen zien wanneer een patient voor het laatst naar de tandarts is geweest, welke notities de huisarts heeft gemaakt en met welkfe klachten ze bij de fysio zijn geweest. (een nieuwen website met laatste tandarst afspraak, huisarts notities en fysio klachten)
