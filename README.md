@@ -1,3 +1,3 @@
 TODO
-- De huisarts wil ook dat de datumnotatie wordt aangepast naar de Nederlandse vorm. Dus dag-maand-jaar in plaats van jaar-maand-dag.
-- De huisarts wil het de details van een patient liever in een pop-up.
+- De Fysio wil van al zijn klanten een e-mailadres kunnen aanklikken, zodat hij eenvoudig een mail kan sturen. (mailto:)
+- De fysio wil dat de button "nieuwe Patient" groen wordt, zodat het duidelijker is waar hij op moet klikken. (:hover)
