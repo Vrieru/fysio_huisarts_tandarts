@@ -9,7 +9,12 @@ $patienten = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1>Patiënten Overzicht</h1>
-            <a href="toevoegen.php" class="btn btn-primary">Nieuwe Patiënt</a>
+            <a href="toevoegen.php" 
+             class="btn btn-primary" 
+             onmouseover="this.style.backgroundColor='green'; this.style.borderColor='green';" 
+             onmouseout="this.style.backgroundColor=''; this.style.borderColor='';">
+             Nieuwe Patiënt
+            </a>
         </div>
 
         <div class="table-responsive">
